@@ -1,0 +1,13 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use TCG\Voyager\Traits\Spatial;
+
+class Toko extends Model
+{
+    use Spatial;
+    protected $table = 'toko';
+    
+}
