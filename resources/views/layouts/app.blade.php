@@ -23,6 +23,7 @@
       <link rel="stylesheet" href="{{asset('asset/vendor/owl-carousel/owl.theme.css')}}">
    </head>
    <body>
+      @if (!Auth::check())
       <div class="modal fade login-modal-main" id="bd-example-modal">
          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -38,47 +39,49 @@
                            <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
                            <span class="sr-only">Close</span>
                            </button>
-                           <form>
                               <div class="login-modal-right">
                                  <!-- Tab panes -->
                                  <div class="tab-content">
                                     <div class="tab-pane active" id="login" role="tabpanel">
+                                    <form method="POST" action="{{ route('login') }}">
+                                    @csrf
                                        <h5 class="heading-design-h5">Login to your account</h5>
                                        <fieldset class="form-group">
-                                          <label>Enter Email/Mobile number</label>
-                                          <input type="text" class="form-control" placeholder="+91 123 456 7890">
+                                          <label>Enter Email</label>
+                                          <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                        </fieldset>
                                        <fieldset class="form-group">
                                           <label>Enter Password</label>
-                                          <input type="password" class="form-control" placeholder="********">
+                                          <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="********" id="password" name="password" required autocomplete="current-password">
                                        </fieldset>
                                        <fieldset class="form-group">
                                           <button type="submit" class="btn btn-lg btn-secondary btn-block">Enter to your account</button>
                                        </fieldset>
-                                       <div class="login-with-sites text-center">
-                                          <p>or Login with your social profile:</p>
-                                          <button class="btn-facebook login-icons btn-lg"><i class="mdi mdi-facebook"></i> Facebook</button>
-                                          <button class="btn-google login-icons btn-lg"><i class="mdi mdi-google"></i> Google</button>
-                                          <button class="btn-twitter login-icons btn-lg"><i class="mdi mdi-twitter"></i> Twitter</button>
-                                       </div>
                                        <div class="custom-control custom-checkbox">
-                                          <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                          <label class="custom-control-label" for="customCheck1">Remember me</label>
+                                          <input type="checkbox" class="custom-control-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                          <label class="custom-control-label" for="remember">Remember me</label>
                                        </div>
+                                    </form>
                                     </div>
                                     <div class="tab-pane" id="register" role="tabpanel">
+                                    <form method="POST" action="{{ route('register') }}">
+                                    @csrf
                                        <h5 class="heading-design-h5">Register Now!</h5>
                                        <fieldset class="form-group">
-                                          <label>Enter Email/Mobile number</label>
-                                          <input type="text" class="form-control" placeholder="+91 123 456 7890">
+                                          <label>Enter Name</label>
+                                          <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
+                                       </fieldset>
+                                       <fieldset class="form-group">
+                                          <label>Enter Email</label>
+                                          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                        </fieldset>
                                        <fieldset class="form-group">
                                           <label>Enter Password</label>
-                                          <input type="password" class="form-control" placeholder="********">
+                                          <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="********" name="password" required autocomplete="new-password">
                                        </fieldset>
                                        <fieldset class="form-group">
                                           <label>Enter Confirm Password </label>
-                                          <input type="password" class="form-control" placeholder="********">
+                                          <input type="password" class="form-control" placeholder="********" name="password_confirmation" required autocomplete="new-password">
                                        </fieldset>
                                        <fieldset class="form-group">
                                           <button type="submit" class="btn btn-lg btn-secondary btn-block">Create Your Account</button>
@@ -87,6 +90,7 @@
                                           <input type="checkbox" class="custom-control-input" id="customCheck2">
                                           <label class="custom-control-label" for="customCheck2">I Agree with <a href="#">Term and Conditions</a></label>
                                        </div>
+                                    </form>
                                     </div>
                                  </div>
                                  <div class="clearfix"></div>
@@ -102,7 +106,6 @@
                                  </div>
                                  <div class="clearfix"></div>
                               </div>
-                           </form>
                         </div>
                      </div>
                   </div>
@@ -110,7 +113,8 @@
             </div>
          </div>
       </div>
-      <nav class="navbar navbar-light navbar-expand-lg bg-dark bg-faded osahan-menu">
+      @endif
+       <nav class="navbar navbar-light navbar-expand-lg bg-dark bg-faded osahan-menu">
          <div class="container-fluid">
             <a class="navbar-brand" href="{{url('/')}}"> <img src="{{asset('asset/img/logo.png')}}" alt="logo"> </a>
             <button class="navbar-toggler navbar-toggler-white" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -129,9 +133,11 @@
                </div>
                <div class="my-2 my-lg-0">
                   <ul class="list-inline main-nav-right">
+                      @if(!Auth::check())
                      <li class="list-inline-item">
                         <a href="#" data-target="#bd-example-modal" data-toggle="modal" class="btn btn-link"><i class="mdi mdi-account-circle"></i> Login/Sign Up</a>
                      </li>
+                     @endif
                      <li class="list-inline-item cart-btn">
                         <a href="#" data-toggle="offcanvas" class="btn btn-link border-none"><i class="mdi mdi-cart"></i> My Cart <small class="cart-value">5</small></a>
                      </li>
@@ -159,6 +165,21 @@
                   <li class="nav-item">
                      <a class="nav-link" href="{{url('contact')}}">Contact</a>
                   </li>
+                  @if(Auth::check())
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Account
+                    </a>
+                    <div class="dropdown-menu">
+                       <a class="dropdown-item" href="#"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  My Profile</a>
+                       <a class="dropdown-item" href="#"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Order List</a> 
+                       <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Log Out</a> 
+                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                 </li>
+                  @endif
                </ul>
             </div>
          </div>

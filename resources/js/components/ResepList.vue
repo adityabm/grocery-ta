@@ -17,7 +17,7 @@
 							   <div class="card-body card-shop-filters">
 								  <div class="custom-control custom-checkbox">
 									 <input type="checkbox" class="custom-control-input" id="cb1">
-									 <label class="custom-control-label" for="cb1">All Product </label>
+									 <label class="custom-control-label" for="cb1">All Recipe </label>
 								  </div>
 							   </div>
 							</div>
@@ -60,10 +60,10 @@
                <div class="col-md-9">
                   <a href="#"><img class="img-fluid mb-3" :src="base_path + 'asset/img/shop.jpg'" alt=""></a>
                   <div class="shop-head">
-                     <a href="#"><span class="mdi mdi-home"></span> Home</a> <span class="mdi mdi-chevron-right"></span> <a href="#">Product</a>
+                     <a href="#"><span class="mdi mdi-home"></span> Home</a> <span class="mdi mdi-chevron-right"></span> <a href="#">Recipe</a>
                      <div class="btn-group float-right mt-2">
                         <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sort by Products &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Sort by Recipes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                            <a class="dropdown-item" href="#" v-on:click="sort('')">Relevance</a>
@@ -72,23 +72,20 @@
                            <a class="dropdown-item" href="#" v-on:click="sort('nama','asc')">Name (A to Z)</a>
                         </div>
                      </div>
-                     <h5 class="mb-3">Product</h5>
+                     <h5 class="mb-3">Recipe</h5>
                   </div>
                   <div class="row no-gutters">
                      <div class="col-md-4" v-for="(item,index) in items" :key="index" :index="index">
                         <div class="product">
-                           <a :href="base_url + '/produk/' + item.slug">
+                           <a :href="base_url + '/resep/' + item.slug">
                               <div class="product-header">
-                                 <img class="img-fluid" :src="base_path + 'storage/' + item.foto" :alt="item.nama">
+                                 <img class="img-fluid" :src="base_path + 'storage/' + item.foto[0]" :alt="item.nama">
                               </div>
                               <div class="product-body">
-                                 <h5>{{ item.nama }}</h5>
-                                 <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - {{ item.stok }} {{ item.satuan }}</h6>
-                              </div>
-                              <div class="product-footer pb-3">
-                                 <button type="button" class="btn btn-secondary btn-sm float-right"><i class="mdi mdi-cart-outline"></i> Add To Cart</button>
-                                 <p class="offer-price mb-0">Rp {{ item.harga }}</p>
-                              </div>
+                                <h5>{{ item.nama }}</h5>
+                                <h6>oleh <strong>{{item.author}}</strong></h6>
+                                <h6 class="text-right"><strong>{{item.created}}</strong></h6>
+                            </div>
                            </a>
                         </div>
                      </div>

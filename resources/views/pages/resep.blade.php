@@ -5,13 +5,13 @@
         <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <a href="#"><strong><span class="mdi mdi-home"></span> Home</strong></a> <span class="mdi mdi-chevron-right"></span> <a href="#">Produk</a>
+                <a href="#"><strong><span class="mdi mdi-home"></span> Home</strong></a> <span class="mdi mdi-chevron-right"></span> <a href="#">Resep</a>
             </div>
         </div>
         </div>
     </section>
-    <produk-list
-        :url="'{{url('api/produk/get-data') }}'"
+    <resep-list
+        :url="'{{url('api/resep/get-data') }}'"
         :oid="'data-jenjang'"
         :params="params"
         :config="{
@@ -19,5 +19,5 @@
             default_sort: 'created_at',
             default_sort_dir: 'asc',
         }"
-    ></produk-list>
+    ></resep-list>
 @endsection

@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'LandingController@index');
 Route::get('produk', 'LandingController@produk');
+Route::get('resep', 'LandingController@resep');
 
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();

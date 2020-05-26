@@ -21,4 +21,9 @@ class LandingController extends Controller
     {
         return view('pages.produk');
     }
+
+    public function resep()
+    {
+        return view('pages.resep');
+    }
 }
