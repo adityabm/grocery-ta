@@ -14,8 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'LandingController@index');
-Route::get('produk', 'LandingController@produk');
+Route::get('bahan-masakan', 'LandingController@produk');
 Route::get('resep', 'LandingController@resep');
+
+Route::get('resep/{slug}', 'LandingController@resepDetail');
+Route::get('bahan-masakan/{slug}', 'LandingController@produkDetail');
+
+//Belum Work
+Route::get('cart', 'LandingController@cart');
+Route::get('checkout', 'LandingController@checkout');
+Route::get('contact', 'LandingController@contact');
+Route::get('about', 'LandingController@about');
 
 
 Route::group(['prefix' => 'admin'], function () {

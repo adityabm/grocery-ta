@@ -77,7 +77,7 @@
                   <div class="row no-gutters">
                      <div class="col-md-4" v-for="(item,index) in items" :key="index" :index="index">
                         <div class="product">
-                           <a :href="base_url + '/produk/' + item.slug">
+                           <a :href="base_url + '/bahan-masakan/' + item.slug">
                               <div class="product-header">
                                  <img class="img-fluid" :src="base_path + 'storage/' + item.foto" :alt="item.nama">
                               </div>
