@@ -100,6 +100,8 @@ class ApiController extends Controller
             $model->jumlah_bahan = count($model->bahan);
             $model->created = date('d F Y',strtotime($model->created_at));
 
+            $model->foto_path = $model->foto_path;
+
             $tmp = [];
             foreach ($model->foto_path as $foto) {
                 $tmp[] = asset('storage/'.$foto);
