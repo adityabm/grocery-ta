@@ -19,12 +19,12 @@
                 <div class="shop-detail-left">
                     <div class="shop-detail-slider">
                         <div id="sync1" class="owl-carousel">
-                            @foreach ($resep->foto as $foto)
+                            @foreach ($resep->foto_path as $foto)
                                 <div class="item"><img alt="{{$resep->nama}}-foto" src="{{asset('storage/'.$foto)}}" class="img-fluid img-center w-100"></div>
                             @endforeach
                         </div>
                         <div id="sync2" class="owl-carousel">
-                            @foreach ($resep->foto as $foto)
+                            @foreach ($resep->foto_path as $foto)
                                 <div class="item"><img alt="{{$resep->nama}}-thumbnail" src="{{asset('storage/'.$foto)}}" class="img-fluid img-center"></div>
                             @endforeach
                         </div>

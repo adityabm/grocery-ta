@@ -101,7 +101,7 @@ class ApiController extends Controller
             $model->created = date('d F Y',strtotime($model->created_at));
 
             $tmp = [];
-            foreach ($model->foto as $foto) {
+            foreach ($model->foto_path as $foto) {
                 $tmp[] = asset('storage/'.$foto);
             }
             $model->foto_full_url = $tmp;
@@ -152,7 +152,7 @@ class ApiController extends Controller
 
         foreach ($resep as &$res) {
             $tmp = [];
-            foreach ($res->foto as $foto) {
+            foreach ($res->foto_path as $foto) {
                 $tmp[] = asset('storage/'.$foto);
             }
             $res->foto = $tmp;

@@ -4,7 +4,8 @@
 <section class="carousel-slider-main text-center border-top border-bottom bg-white">
     <div class="owl-carousel owl-carousel-slider">
         <div class="item">
-            <a href="shop.html"><img class="img-fluid" src="{{asset('asset/img/slider/slider1.jpg')}}"
+            <a href="shop.html"><img class="img-fluid" src="
+                "
                     alt="First slide"></a>
         </div>
         <div class="item">
@@ -79,7 +80,7 @@
                 <div class="product">
                     <a href="{{url('resep/'.$res->slug)}}">
                         <div class="product-header">
-                            <img class="img-fluid" src="{{asset('storage/'.$res->foto[0])}}" alt="{{$res->nama}}">
+                            <img class="img-fluid" src="{{asset('storage/'.$res->foto_path[0])}}" alt="{{$res->nama}}">
                         </div>
                         <div class="product-body">
                             <h5>{{$res->nama}}</h5>

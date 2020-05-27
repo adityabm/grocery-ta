@@ -79,7 +79,7 @@
                         <div class="product">
                            <a :href="base_url + '/resep/' + item.slug">
                               <div class="product-header">
-                                 <img class="img-fluid" :src="base_path + 'storage/' + item.foto[0]" :alt="item.nama">
+                                 <img class="img-fluid" :src="base_path + 'storage/' + item.foto_path[0]" :alt="item.nama">
                               </div>
                               <div class="product-body">
                                 <h5>{{ item.nama }}</h5>

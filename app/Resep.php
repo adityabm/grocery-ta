@@ -10,12 +10,8 @@ use Auth;
 class Resep extends Model
 {
     use SoftDeletes;
-    
-    protected $table = 'resep';
 
-    protected $casts = [
-        'foto' => 'array',
-    ];
+    protected $table = 'resep';
 
     public static function boot()
     {
@@ -29,5 +25,14 @@ class Resep extends Model
     public function bahan()
     {
         return $this->belongsToMany('App\BahanMasakan','resep_detail');
+    }
+
+    public function getFotoPathAttribute()
+    {
+        if(!is_array($this->foto)){
+            $this->foto = json_decode($this->foto);
+        }
+
+        return $this->foto;
     }
 }
