@@ -35,6 +35,14 @@ class ApiController extends Controller
 
         $count = $models->count();
 
+        $search = $request->get('search',false);
+        if($search){
+        	$models = $models->where(function($q) use ($search){
+        		$q->where('nama','like',"%$search%");
+        	});
+        }
+
+
         if ($order) {
             $order_direction = $request->get('order_direction', 'asc');
             if (empty($order_direction)) $order_direction = 'asc';
@@ -80,6 +88,13 @@ class ApiController extends Controller
         }
 
         $count = $models->count();
+
+        $search = $request->get('search',false);
+        if($search){
+        	$models = $models->where(function($q) use ($search){
+        		$q->where('nama','like',"%$search%");
+        	});
+        }
 
         if ($order) {
             $order_direction = $request->get('order_direction', 'asc');
@@ -149,19 +164,24 @@ class ApiController extends Controller
 
         $ad_banner = [asset('asset/img/ad/1.jpg'),asset('asset/img/ad/2.jpg')];
 
-        $resep = Resep::limit(5)->get();
+        $resep = Resep::with('bahan')->limit(5)->get();
         $bahan = BahanMasakan::limit(5)->get();
 
         foreach ($resep as &$res) {
+            $res->jumlah_bahan = count($res->bahan);
+            $res->created = date('d F Y',strtotime($res->created_at));
+
+            $res->foto_path = $res->foto_path;
+
             $tmp = [];
             foreach ($res->foto_path as $foto) {
                 $tmp[] = asset('storage/'.$foto);
             }
-            $res->foto = $tmp;
+            $res->foto_full_url = $tmp;
         }
         
         foreach ($bahan as &$bah) {
-            $bah->foto = asset('storage/'.$bah->foto);
+            $bah->foto_full_url = asset('storage/'.$bah->foto);
         }
 
         $res = [

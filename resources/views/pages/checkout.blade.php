@@ -195,7 +195,7 @@
                             <a class="float-right remove-cart" href="#"><i class="mdi mdi-close"></i></a>
                             <img class="img-fluid" src="{{asset('asset/img/item/11.jpg')}}" alt="">
                             <h5><a href="#">Product Title Here</a></h5>
-                            <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - 500 gm</h6>
+                            <h6><strong><span class="mdi mdi-approval"></span> Tersedia</strong> - 500 gm</h6>
                             <p class="offer-price mb-0">Rp 10,000</p>
                         </div>
                     </div>

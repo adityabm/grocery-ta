@@ -33,7 +33,7 @@
                             <td class="cart_product"><a href="#"><img class="img-fluid" src="{{asset('asset/img/item/11.jpg')}}" alt=""></a></td>
                             <td class="cart_description">
                             <h5 class="product-name"><a href="#">Ipsums Dolors Untra </a></h5>
-                            <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - 500 gm</h6>
+                            <h6><strong><span class="mdi mdi-approval"></span> Tersedia</strong> - 500 gm</h6>
                             </td>
                             <td class="availability in-stock"><span class="badge badge-success">In stock</span></td>
                             <td class="price"><span>Rp 10,000</span></td>

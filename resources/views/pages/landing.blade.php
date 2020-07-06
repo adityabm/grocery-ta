@@ -4,8 +4,7 @@
 <section class="carousel-slider-main text-center border-top border-bottom bg-white">
     <div class="owl-carousel owl-carousel-slider">
         <div class="item">
-            <a href="shop.html"><img class="img-fluid" src="
-                "
+            <a href="shop.html"><img class="img-fluid" src="{{asset('asset/img/slider/slider1.jpg')}}"
                     alt="First slide"></a>
         </div>
         <div class="item">
@@ -31,7 +30,7 @@
     <div class="container">
         <div class="section-header">
             <h5 class="heading-design-h5">&nbsp;
-                <a class="float-right text-secondary" href="shop.html">View All</a>
+                <a class="float-right text-secondary" href="shop.html">Lihat Lebih Banyak</a>
             </h5>
         </div>
         <div class="owl-carousel owl-carousel-featured">
@@ -44,11 +43,11 @@
                             </div>
                             <div class="product-body">
                                 <h5>{{$b->nama}}</h5>
-                                <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - {{$b->stok}} {{ucwords($b->satuan)}}</h6>
+                                <h6><strong><span class="mdi mdi-approval"></span> Tersedia</strong> - {{$b->stok}} {{ucwords($b->satuan)}}</h6>
                             </div>
                             <div class="product-footer pb-3">
                                 <button type="button" class="btn btn-secondary btn-sm float-right"><i
-                                        class="mdi mdi-cart-outline"></i> Add To Cart</button>
+                                        class="mdi mdi-cart-outline"></i> Masukkan Keranjang</button>
                                 <p class="offer-price mb-0">Rp {{number_format($b->harga)}}</p>
                             </div>
                         </a>
@@ -71,7 +70,7 @@
     <div class="container">
         <div class="section-header">
             <h5 class="heading-design-h5">&nbsp;
-                <a class="float-right text-secondary" href="shop.html">View All</a>
+                <a class="float-right text-secondary" href="shop.html">Lihat Lebih Banyak</a>
             </h5>
         </div>
         <div class="owl-carousel owl-carousel-featured">

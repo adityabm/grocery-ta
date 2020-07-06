@@ -45,50 +45,50 @@
                                     <div class="tab-pane active" id="login" role="tabpanel">
                                     <form method="POST" action="{{ route('login') }}">
                                     @csrf
-                                       <h5 class="heading-design-h5">Login to your account</h5>
+                                       <h5 class="heading-design-h5">Masuk ke Akun Anda</h5>
                                        <fieldset class="form-group">
-                                          <label>Enter Email</label>
+                                          <label>Email</label>
                                           <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                        </fieldset>
                                        <fieldset class="form-group">
-                                          <label>Enter Password</label>
+                                          <label>Kata Sandi</label>
                                           <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="********" id="password" name="password" required autocomplete="current-password">
                                        </fieldset>
                                        <fieldset class="form-group">
-                                          <button type="submit" class="btn btn-lg btn-secondary btn-block">Enter to your account</button>
+                                          <button type="submit" class="btn btn-lg btn-secondary btn-block">Masuk</button>
                                        </fieldset>
                                        <div class="custom-control custom-checkbox">
                                           <input type="checkbox" class="custom-control-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                          <label class="custom-control-label" for="remember">Remember me</label>
+                                          <label class="custom-control-label" for="remember">Ingat Saya</label>
                                        </div>
                                     </form>
                                     </div>
                                     <div class="tab-pane" id="register" role="tabpanel">
                                     <form method="POST" action="{{ route('register') }}">
                                     @csrf
-                                       <h5 class="heading-design-h5">Register Now!</h5>
+                                       <h5 class="heading-design-h5">Daftar Sekarang!</h5>
                                        <fieldset class="form-group">
-                                          <label>Enter Name</label>
+                                          <label>Nama Lengkap</label>
                                           <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
                                        </fieldset>
                                        <fieldset class="form-group">
-                                          <label>Enter Email</label>
+                                          <label>Email</label>
                                           <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                        </fieldset>
                                        <fieldset class="form-group">
-                                          <label>Enter Password</label>
+                                          <label>Kata Sandi</label>
                                           <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="********" name="password" required autocomplete="new-password">
                                        </fieldset>
                                        <fieldset class="form-group">
-                                          <label>Enter Confirm Password </label>
+                                          <label>Konfirmasi Kata Sandi </label>
                                           <input type="password" class="form-control" placeholder="********" name="password_confirmation" required autocomplete="new-password">
                                        </fieldset>
                                        <fieldset class="form-group">
-                                          <button type="submit" class="btn btn-lg btn-secondary btn-block">Create Your Account</button>
+                                          <button type="submit" class="btn btn-lg btn-secondary btn-block">Buat Akun</button>
                                        </fieldset>
                                        <div class="custom-control custom-checkbox">
                                           <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                          <label class="custom-control-label" for="customCheck2">I Agree with <a href="#">Term and Conditions</a></label>
+                                          <label class="custom-control-label" for="customCheck2">Saya Setuju dengan <a href="#">Syarat dan Ketentuan</a> Berikut</label>
                                        </div>
                                     </form>
                                     </div>
@@ -97,10 +97,10 @@
                                  <div class="text-center login-footer-tab">
                                     <ul class="nav nav-tabs" role="tablist">
                                        <li class="nav-item">
-                                          <a class="nav-link active" data-toggle="tab" href="#login" role="tab"><i class="mdi mdi-lock"></i> LOGIN</a>
+                                          <a class="nav-link active" data-toggle="tab" href="#login" role="tab"><i class="mdi mdi-lock"></i> MASUK</a>
                                        </li>
                                        <li class="nav-item">
-                                          <a class="nav-link" data-toggle="tab" href="#register" role="tab"><i class="mdi mdi-pencil"></i> REGISTER</a>
+                                          <a class="nav-link" data-toggle="tab" href="#register" role="tab"><i class="mdi mdi-pencil"></i> DAFTAR</a>
                                        </li>
                                     </ul>
                                  </div>
@@ -124,9 +124,9 @@
                <div class="navbar-nav mr-auto mt-2 mt-lg-0 margin-auto top-categories-search-main">
                   <div class="top-categories-search">
                      <div class="input-group">
-                        <input class="form-control" placeholder="Search products / recipes" aria-label="Search products recipes" type="text">
+                        <input class="form-control" placeholder="Cari Produk atau Resep" aria-label="Cari Produk atau Resep" type="text">
                         <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="button"><i class="mdi mdi-file-find"></i> Search</button>
+                        <button class="btn btn-secondary" type="button"><i class="mdi mdi-file-find"></i> Cari</button>
                         </span>
                      </div>
                   </div>
@@ -135,11 +135,11 @@
                   <ul class="list-inline main-nav-right">
                       @if(!Auth::check())
                      <li class="list-inline-item">
-                        <a href="#" data-target="#bd-example-modal" data-toggle="modal" class="btn btn-link"><i class="mdi mdi-account-circle"></i> Login/Sign Up</a>
+                        <a href="#" data-target="#bd-example-modal" data-toggle="modal" class="btn btn-link"><i class="mdi mdi-account-circle"></i> Masuk / Daftar</a>
                      </li>
                      @endif
                      <li class="list-inline-item cart-btn">
-                        <a href="#" data-toggle="offcanvas" class="btn btn-link border-none"><i class="mdi mdi-cart"></i> My Cart <small class="cart-value">1</small></a>
+                        <a href="#" data-toggle="offcanvas" class="btn btn-link border-none"><i class="mdi mdi-cart"></i> Keranjang <small class="cart-value">1</small></a>
                      </li>
                   </ul>
                </div>
@@ -151,29 +151,29 @@
             <div class="collapse navbar-collapse" id="navbarText">
                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 margin-auto">
 				  <li class="nav-item">
-                     <a href="{{url('/')}}" class="nav-link">Home</a>
+                     <a href="{{url('/')}}" class="nav-link">Beranda</a>
                   </li>
 				  <li class="nav-item">
-                     <a href="{{url('about')}}" class="nav-link">About Us</a>
+                     <a href="{{url('about')}}" class="nav-link">Tentang Kami</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="{{url('bahan-masakan')}}">Grocery & Food</a>
+                     <a class="nav-link" href="{{url('bahan-masakan')}}">Produk</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="{{url('resep')}}">Recipe</a>
+                     <a class="nav-link" href="{{url('resep')}}">Resep</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="{{url('contact')}}">Contact</a>
+                     <a class="nav-link" href="{{url('contact')}}">Kontak</a>
                   </li>
                   @if(Auth::check())
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    My Account
+                    Akun Saya
                     </a>
                     <div class="dropdown-menu">
-                       <a class="dropdown-item" href="#"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  My Profile</a>
-                       <a class="dropdown-item" href="#"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Order List</a> 
-                       <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Log Out</a> 
+                       <a class="dropdown-item" href="#"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Profil Saya</a>
+                       <a class="dropdown-item" href="#"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Daftar Transaksi</a> 
+                       <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-chevron-right" aria-hidden="true"></i>  Keluar</a> 
                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
@@ -198,7 +198,7 @@
                   <p class="mb-0"><a class="text-success" href="#"><i class="mdi mdi-email"></i> mail@gmail.com</a></p>
                </div>
                <div class="col-lg-2 col-md-2">
-                  <h6 class="mb-4">CATEGORIES</h6>
+                  <h6 class="mb-4">KATEGORI</h6>
                   <ul>
                     <li><a href="#">Makanan Pembuka</a></li>
                     <li><a href="#">Minuman</a></li>
@@ -209,19 +209,19 @@
                   <ul>
                </div>
                <div class="col-lg-2 col-md-2">
-                  <h6 class="mb-4">ABOUT US</h6>
+                  <h6 class="mb-4">TENTANG KAMI</h6>
                   <ul>
                   <li><a href="#">Company Information</a></li>
                   <li><a href="#">Careers</a></li>
                   <ul>
                </div>
                <div class="col-lg-3 col-md-3 offset-md-2">
-                  <h6 class="mb-4">Download App</h6>
+                  <h6 class="mb-4">Unduh Aplikasi</h6>
                   <div class="app">
                      <a href="#"><img src="{{asset('asset/img/google.png')}}" alt=""></a>
                      <a href="#"><img src="{{asset('asset/img/apple.png')}}" alt=""></a>
                   </div>
-                  <h6 class="mb-3 mt-4">GET IN TOUCH</h6>
+                  <h6 class="mb-3 mt-4">BERGABUNG DENGAN KAMI</h6>
                   <div class="footer-social">
                      <a class="btn-facebook" href="#"><i class="mdi mdi-facebook"></i></a>
                      <a class="btn-twitter" href="#"><i class="mdi mdi-twitter"></i></a>
@@ -258,7 +258,7 @@
                <a class="float-right remove-cart" href="#"><i class="mdi mdi-close"></i></a>
                <img class="img-fluid" src="{{asset('asset/img/item/11.jpg')}}" alt="">
                <h5><a href="#">Product Title Here</a></h5>
-               <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - 500 gm</h6>
+               <h6><strong><span class="mdi mdi-approval"></span> Tersedia</strong> - 500 gm</h6>
                <p class="offer-price mb-0">Rp 10,000</p>
             </div>
          </div>

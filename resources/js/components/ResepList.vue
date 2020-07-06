@@ -9,7 +9,7 @@
 							<div class="card-header" id="headingOne">
 							   <h5 class="mb-0">
 								  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								  Category <span class="mdi mdi-chevron-down float-right"></span>
+								  Kategori <span class="mdi mdi-chevron-down float-right"></span>
 								  </button>
 							   </h5>
 							</div>
@@ -17,7 +17,7 @@
 							   <div class="card-body card-shop-filters">
 								  <div class="custom-control custom-checkbox">
 									 <input type="checkbox" class="custom-control-input" id="cb1">
-									 <label class="custom-control-label" for="cb1">All Recipe </label>
+									 <label class="custom-control-label" for="cb1">Semua Resep </label>
 								  </div>
 							   </div>
 							</div>
@@ -58,21 +58,20 @@
 				   </div>
 				</div>
                <div class="col-md-9">
-                  <a href="#"><img class="img-fluid mb-3" :src="base_path + 'asset/img/shop.jpg'" alt=""></a>
                   <div class="shop-head">
-                     <a href="#"><span class="mdi mdi-home"></span> Home</a> <span class="mdi mdi-chevron-right"></span> <a href="#">Recipe</a>
+                     <a href="#"><span class="mdi mdi-home"></span> Home</a> <span class="mdi mdi-chevron-right"></span> <a href="#">Resep</a>
                      <div class="btn-group float-right mt-2">
                         <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sort by Recipes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Urutkan Resep &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                           <a class="dropdown-item" href="#" v-on:click="sort('')">Relevance</a>
-                           <a class="dropdown-item" href="#" v-on:click="sort('harga','asc')">Price (Low to High)</a>
-                           <a class="dropdown-item" href="#" v-on:click="sort('harga','desc')">Price (High to Low)</a>
-                           <a class="dropdown-item" href="#" v-on:click="sort('nama','asc')">Name (A to Z)</a>
+                           <a class="dropdown-item" href="#" v-on:click="sort('')">Sesuai</a>
+                           <a class="dropdown-item" href="#" v-on:click="sort('harga','asc')">Harga (Rendah ke Tinggi)</a>
+                           <a class="dropdown-item" href="#" v-on:click="sort('harga','desc')">Harga (Tinggi ke Rendah)</a>
+                           <a class="dropdown-item" href="#" v-on:click="sort('nama','asc')">Nama</a>
                         </div>
                      </div>
-                     <h5 class="mb-3">Recipe</h5>
+                     <h5 class="mb-3">Resep</h5>
                   </div>
                   <div class="row no-gutters">
                      <div class="col-md-4" v-for="(item,index) in items" :key="index" :index="index">
@@ -93,7 +92,7 @@
                   <nav v-show="pagination.count > 0">
                      <ul class="pagination justify-content-center mt-4">
                         <li class="page-item" :class="pagination.page != 1 ? '' : 'disabled'" v-on:click="paginate('previous')">
-                           <a class="page-link" href="#">Previous</a>
+                           <a class="page-link" href="#">Sebelumnya</a>
                         </li>
                         <template v-for="(list,ind) in pageList">
                             <li class="page-item" :class="list == pagination.page ? 'active' : ''">
@@ -107,7 +106,7 @@
                             </li>
                         </template>
                         <li class="page-item" :class="pagination.page != pagination.count ? '' : 'disabled'" v-on:click="paginate('previous')">
-                           <a class="page-link" href="#">Next</a>
+                           <a class="page-link" href="#">Selanjutnya</a>
                         </li>
                      </ul>
                   </nav>

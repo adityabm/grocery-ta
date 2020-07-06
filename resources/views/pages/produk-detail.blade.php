@@ -27,14 +27,14 @@
             <div class="col-md-6">
                 <div class="shop-detail-right">
                     <h2>{{$produk->nama}}</h2>
-                    <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - {{$produk->stok}} {{$produk->satuan}}</h6>
+                    <h6><strong><span class="mdi mdi-approval"></span> Tersedia</strong> - {{$produk->stok}} {{$produk->satuan}}</h6>
                     <p class="regular-price">Rp {{number_format($produk->harga)}}</p>
                     <a href="checkout.html"><button type="button" class="btn btn-secondary btn-lg"><i
-                                class="mdi mdi-cart-outline"></i> Add To Cart</button> </a>
+                                class="mdi mdi-cart-outline"></i> Masukkan Keranjang</button> </a>
                     <div class="short-description">
                         <h5>
-                            Quick Overview
-                            <p class="float-right">Availability: <span class="badge badge-success">In Stock</span></p>
+                            Ringkasan
+                            <p class="float-right">Ketersediaan: <span class="badge badge-success">Ada</span></p>
                         </h5>
                         {!! $produk->informasi !!}
                     </div>
@@ -46,7 +46,7 @@
 <section class="product-items-slider section-padding bg-white border-top">
     <div class="container">
         <div class="section-header">
-            <h5 class="heading-design-h5">Shop
+            <h5 class="heading-design-h5">Toko
             </h5>
         </div>
         <div class="owl-carousel owl-carousel-featured">

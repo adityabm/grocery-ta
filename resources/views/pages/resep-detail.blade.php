@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <a href="#"><strong><span class="mdi mdi-home"></span> Home</strong></a> <span
-                    class="mdi mdi-chevron-right"></span> <a href="{{url('resep')}}">Recipe</a> <span
+                    class="mdi mdi-chevron-right"></span> <a href="{{url('resep')}}">Resep</a> <span
                     class="mdi mdi-chevron-right"></span> <a href="#">{{$resep->nama}}</a>
             </div>
         </div>
@@ -38,8 +38,8 @@
                     <h6><strong><span class="mdi mdi-approval"></span> Jumlah Bahan</strong> - {{count($resep->bahan)}} Bahan Masakan</h6>
                     <div class="short-description">
                         <h5>
-                            Quick Information
-                            <p class="float-right">Category: <span class="badge badge-success">{{ucwords(str_replace('-',' ',$resep->category))}}</span></p>
+                            Informasi Singkat
+                            <p class="float-right">Kategori: <span class="badge badge-success">{{ucwords(str_replace('-',' ',$resep->category))}}</span></p>
                         </h5>
                         {!! $resep->informasi !!}
                     </div>
@@ -47,7 +47,7 @@
             </div>
             <div class="col-md-12 mt-3">
                 <div class="shop-detail-right p-3">
-                    <h2>Cooking Step</h2>
+                    <h2>Langkah Memasak</h2>
                     <div class="short-description">
                         {!! $resep->step !!}
                     </div>
@@ -67,7 +67,7 @@
 <section class="product-items-slider section-padding bg-white border-top">
     <div class="container">
         <div class="section-header">
-            <h5 class="heading-design-h5">Ingredients
+            <h5 class="heading-design-h5">Bahan-bahan
             </h5>
         </div>
         <div class="owl-carousel owl-carousel-featured">
@@ -80,7 +80,7 @@
                         </div>
                         <div class="product-body">
                             <h5>{{$bahan->nama}}</h5>
-                            <h6><strong><span class="mdi mdi-approval"></span> Available in</strong> - {{$bahan->stok}} {{$bahan->satuan}}</h6>
+                            <h6><strong><span class="mdi mdi-approval"></span> Tersedia</strong> - {{$bahan->stok}} {{$bahan->satuan}}</h6>
                         </div>
                     </a>
                 </div>
@@ -89,7 +89,7 @@
         </div>
         <div class="beli-product mt-3 text-right pr-3">
             <button class="btn btn-lg btn-primary"><i
-                class="mdi mdi-cart-outline"></i> Buy All Ingredients</button>
+                class="mdi mdi-cart-outline"></i> Beli Semua Bahan</button>
         </div>
     </div>
 </section>
